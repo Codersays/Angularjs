@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title> Angular JS Demo</title>
+	 <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js">
+</script> 
+<div ng-app="myApp" ng-controller="myCtrl">
+  
+<script>
+var app = angular.module('myApp',[]);
+app.controller('myCtrl', ['$scope',function($scope) {
+$scope.showCourses=function() {
+	$scope.ugcourse=[ {id:'i',courseName:'BBA(CA)'}, 
+				{id:' ii',courseName:'BBA'},
+				{id:'iii',courseName:'BBA(IB)'}
+			];
+	$scope.pgcourse=[  {id:'  i',courseName:'MCOM'}, 
+				{id:' ii',courseName:'MCA'},
+				{id:'iii',courseName:'MBA'}
+			];
+
+}
+}]);
+
+</script>
+</head>
+
+<body>
+	<div ng-app="myApp">
+ 	<form>
+		<div ng-controller="myCtrl">
+			Under Graduate Courses <br>
+			<h3>Id &ensp;Course Name</h3>
+			<div ng-repeat='x in ugcourse'>
+				{{ x.id + "&ensp;&ensp;&ensp;&ensp;"+ x.courseName }}
+			</div>
+			
+			<br><br>Post Graduate courses 
+			<h3>Id &ensp;Course Name</h3>
+			<div ng-repeat='x in pgcourse'>
+				{{ x.id + " &ensp;&ensp;&ensp;&ensp;"+ x.courseName }}
+				
+			</div>
+		</div>
+		<br><br>
+		<input type="button" ng-click="showCourses()" value="Click"></input>
+	
+	</form>
+
+</body>
+</html>
