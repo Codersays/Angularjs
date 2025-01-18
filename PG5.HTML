@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>
+Angular JS SLIP - 5
+</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js">
+</script>
+<script>
+    var app=angular.module('myApp',[])
+    app.controller('myCtrl',function($scope)
+    {
+        $scope.add=function(num1,num2)
+        {
+            $scope.result=parseInt(num1)+parseInt(num2);
+        }
+    });
+</script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl" ng-init="num1=0;num2=0">
+<div >
+<p>First Number : <input type="number" ng-model="num1"></p>
+<p>Secound Number : <input type="number" ng-model="num2"></p><br>
+
+<b>Disable Addition Button:</b><input type="checkbox" ng-model="disable"><br><br>
+
+<input type="checkbox" ng-model="showresult">Show result<br><br>
+<input type="button" ng-click="add(num1,num2)" Value="Addition" ng-disabled="disable"><br>
+​<div ng-init="txt='Addition :'">
+    <h2><p ng-bind="txt"></p></h2>
+</div>      
+<div ng-show="showresult"><h2> {{ result }}</h2></div>
+
+
+</div>
+</body>
+</html>
+ 
+ 
