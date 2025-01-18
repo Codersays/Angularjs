@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>
+Angular JS Assignment 2 Question 1
+</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js">
+</script>
+<div ng-app="myApp" ng-controller="myCtrl" ng-init="Games=[]">
+<script>
+var app = angular.module('myApp',[]);
+app.controller('myCtrl',function($scope) {
+			$scope.displayGames=function() {
+			$scope.Games=[ {gameName:'Cricket',playerName:'Anurag Kumar',gameType:'Outdoor'},
+                		       {gameName:'Call Of Duty',playerName:'Tushar Soni'        ,gameType:'Indoor'},
+          			       {gameName:'PUBG',playerName:'Abhishek Yadav',gameType:'Indoor'},
+				       {gameName:'Football',playerName:'Ranjeet',gameType:'Outdoor'}
+                		     ];
+	                             }
+                                     }
+		        	     );
+</script>
+</head>
+<body>
+	<div ng-app="myApp" ng-init="mytext='&ensp;GameName &ensp;PlayerName &ensp;GameType'">
+ 	<form>
+	<div ng-controller="myCtrl">
+		<h1>List Of Sports :</h1><br>
+		<h3 ng-bind="mytext"></h3>
+		<div ng-repeat='x in Games'>
+			<ul>
+			<li>{{ x.gameName + " ,&ensp; " + x.playerName + " ,&ensp; " + x.gameType}} </li>
+			</ul>
+		</div>
+	</div>
+	<input type="button" ng-click="displayGames()" value="Show"></input>
+	</form>
+</div>
+</body>
+</html
