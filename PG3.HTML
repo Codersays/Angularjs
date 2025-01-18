@@ -1,0 +1,43 @@
+<html>
+    <head>        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+        <div ng-app="myApp" ng-controller="myCtrl" >
+        <script>
+            var app=angular.module('myApp',[]);
+            app.controller('myCtrl',function($scope)
+            {
+                $scope.studentdetails=[ {name:'Tushar',class:'SY-BCA',rollno:'62',college:'Ness wadia'},
+                {name:'Anurag',class:'SY-BCA',rollno:'5',college:'Ness wadia'},
+
+                {name:'Abhishek',class:'SY-BCA',rollno:'1',college:'Ness wadia'},
+
+                {name:'Amode',class:'SY-BCA',rollno:'25',college:'Ness wadia'},
+                {name:'Rohit',class:'SY-BCA',rollno:'52',college:'Ness wadia'},
+                {name:'Mihir',class:'SY-BCA',rollno:'19',college:'Ness wadia'},
+                {name:'Amit',class:'SY-BCA',rollno:'9',college:'Ness wadia'},
+                {name:'Taha',class:'SY-BCA',rollno:'42',college:'Ness wadia'},
+                {name:'Aman',class:'SY-BCA',rollno:'7',college:'Ness wadia'},
+                {name:'Tarush',class:'SY-BCA',rollno:'57',college:'Ness wadia'}
+                ];
+            });
+        </script>
+        </div>
+    </head>
+    <body ng-app="myApp" ng-controller="myCtrl" >
+        
+            <table style="width:30%" border="2">
+                <tr>
+                    <th>Name</th>
+                    <th>Class</th>
+                    <th>Roll No</th>
+                    <th>College</th>
+                </tr>
+                <tr ng-repeat="x in studentdetails">
+                    <td>{{x.name}}</td>
+                    <td>{{x.class}}</td>
+                    <td>{{x.rollno}}</td>
+                    <td>{{x.college}}</td>
+                </tr>
+            </table>
+    </body>
+</html>
