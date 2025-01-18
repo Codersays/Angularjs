@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>
+Angular JS SLIP-4
+</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js">
+</script>
+</head>
+<body ng-app="">
+<table cellpadding="3" cellspacing="0" border="1" align="center" width="100%" >
+    <tr style="text-align:center">
+    <td bgcolor="white"><h1><u>BANK NAME</u></h1>
+    <td bgcolor="white"><h1><u>IFC code</u></h1>
+	<td bgcolor="white"><h1><u>MICR code</u></h1>
+	<td bgcolor="white"><h1><u>ADDRESS</u></h1>
+    </tr>
+	<div ng-init="Details=[
+
+	{bname:'HDFC',mcode:'987654321',icode:'abhdfcmumbai',add:'Mumbai'},
+	{bname:'ICICI',mcode:'147258369',icode:'abicicidelhi',add:'Delhi'},
+		{bname:'SBI',mcode:'633456789',icode:'bhsbipuneqw',add:'Pune'}
+	]">
+    <tr style="text-align:center" ng-repeat="x in Details">
+    <td bgcolor="olive" ><h2> {{ x.bname }} </h2>
+    <td bgcolor="olive" ><h2> {{ x.icode }} </h2>
+    <td bgcolor="olive" ><h2> {{ x.mcode }} </h2>
+    <td bgcolor="olive" ><h2> {{ x.add }} </h2>
+    </tr>
+    </div>	
+    </table>
+</body>
+</html>
+Post a Comme
