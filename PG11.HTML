@@ -1,0 +1,114 @@
+// Using AngularJS Create a SPA that show History of some(4-8) Historical Places (use MVC).
+
+
+<html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+<body ng-app="myApp">
+
+<div class="container-fluid">
+
+<center><h3>Historical places in india</h3></center>
+
+</div>
+
+<nav class="navbar bg-light">
+
+<ul class="navbar-nav">
+
+<li class="nav-item">
+
+<a class="nav-link" href="#!aurangabad">Aurangabad</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="#!pune">Pune</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="#!agra">Agra</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="#!jodhpur">Jodhpur</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="#!hyderabad">Hyderabad</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+
+<div ng-view></div>
+
+<script>
+
+var app = angular.module("myApp", ["ngRoute"]); app.config(function ($routeProvider) {
+
+
+$routeProvider
+
+.when("/", {
+
+templateUrl: "home.html"
+
+})
+
+.when("/aurangabad", { templateUrl: "aurangabad.html"
+
+})
+
+.when("/pune", { templateUrl: "pune.html"
+
+})
+
+.when("/agra", { templateUrl: "agra.html"
+
+})
+
+.when("/jodhpur", { templateUrl: "jodhpur.html"
+
+})
+
+.when("/hyderabad", { templateUrl: "hyderabad.html"
+
+})
+
+});
+
+</script>
+
+</body>
+
+</html>
